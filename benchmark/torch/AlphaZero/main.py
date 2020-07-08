@@ -22,14 +22,14 @@ args = dotdict({
     # master address of xparl cluster
     'master_address': 'localhost:8010',
     # number of remote actors (execute tasks [self-play/pitting/evaluate_test_dataset] in parallel).
-    'actors_num': 5,
+    'actors_num': 25,
 
     # total number of iteration
-    'numIters': 20,
+    'numIters': 200,
     # Number of complete self-play games to simulate during a new iteration.
-    'numEps': 200,
+    'numEps': 500,
     # Number of games to play during arena (pitting) play to determine if new neural network will be accepted.
-    'arenaCompare': 30,
+    'arenaCompare': 50,
     # Number of games moves for MCTS to simulate.
     'numMCTSSims': 800,
     # temp=1 (Temperature, τ (tau)) if episodeStep < tempThresholdStep, and thereafter uses temp=0.
