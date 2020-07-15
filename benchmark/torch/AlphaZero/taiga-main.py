@@ -51,7 +51,7 @@ args = dotdict({
     # folder to save model and training examples
     "checkpoint": "./saved_model/",
     # whether to load saved model and training examples
-    "load_model": False,
+    "load_model": True,
     "load_folder_file": load_folder_file,
 })
 
