@@ -18,36 +18,41 @@ from utils import *
 
 from parl.utils import logger
 
+load_folder_file = (
+    "../../../../connect_x/runs/taiga-200-30/",
+    "best.pth.tar",
+)
+
 args = dotdict({
     # master address of xparl cluster
-    'master_address': 'localhost:8010',
+    "master_address": "localhost:8010",
     # number of remote actors (execute tasks [self-play/pitting/evaluate_test_dataset] in parallel).
-    'actors_num': 5,
+    "actors_num": 5,
 
     # total number of iteration
-    'numIters': 20,
+    "numIters": 10,
     # Number of complete self-play games to simulate during a new iteration.
-    'numEps': 200,
+    "numEps": 500,
     # Number of games to play during arena (pitting) play to determine if new neural network will be accepted.
-    'arenaCompare': 30,
+    "arenaCompare": 50,
     # Number of games moves for MCTS to simulate.
-    'numMCTSSims': 800,
+    "numMCTSSims": 800,
     # temp=1 (Temperature, τ (tau)) if episodeStep < tempThresholdStep, and thereafter uses temp=0.
-    'tempThresholdStep': 15,
+    "tempThresholdStep": 15,
     # During arena playoff, new neural net will be accepted if threshold or more of games are won.
-    'updateThreshold': 0.6,
+    "updateThreshold": 0.6,
     # CPUCT parameter
-    'cpuct': 4,
+    "cpuct": 4,
     # alpha parameter of dirichlet noise which is added to the policy (pi)
-    'dirichletAlpha': 1.0,
+    "dirichletAlpha": 1.0,
     # history of examples from numItersForTrainExamplesHistory latest iterations (training data)
-    'numItersForTrainExamplesHistory': 20,
+    "numItersForTrainExamplesHistory": 20,
 
     # folder to save model and training examples
-    'checkpoint': './saved_model/',
+    "checkpoint": "./saved_model/",
     # whether to load saved model and training examples
-    'load_model': False,
-    'load_folder_file': ('./saved_model', 'checkpoint_1.pth.tar'),
+    "load_model": False,
+    "load_folder_file": load_folder_file,
 })
 
 # Plays arenaCompare games in which player1 starts arenaCompare/2 games and player2 starts arenaCompare/2 games.
@@ -65,7 +70,7 @@ def main():
     c = Coach(game, args)
 
     if args.load_model:
-        logger.info('Loading checkpoint {}...'.format(args.load_folder_file))
+        logger.info("Loading checkpoint {}...".format(args.load_folder_file))
         c.loadModel()
         logger.info("Loading 'trainExamples' from file {}...".format(
             args.load_folder_file))
