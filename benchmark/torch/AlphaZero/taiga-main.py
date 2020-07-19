@@ -19,7 +19,7 @@ from utils import *
 from parl.utils import logger
 
 load_folder_file = (
-    "../../../../connect_x/runs/taiga-200-30/",
+    "../../../../connect_x/runs/taiga-10-500-50",
     "best.pth.tar",
 )
 
