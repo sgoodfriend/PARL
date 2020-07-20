@@ -19,7 +19,7 @@ from utils import *
 from parl.utils import logger
 
 load_folder_file = (
-    "../../../../connect_x/runs/taiga-10-500-50",
+    "../../../../connect_x/runs/taiga_2_10_500_50",
     "best.pth.tar",
 )
 
@@ -32,9 +32,9 @@ args = dotdict({
     # total number of iteration
     "numIters": 10,
     # Number of complete self-play games to simulate during a new iteration.
-    "numEps": 500,
+    "numEps": 750,
     # Number of games to play during arena (pitting) play to determine if new neural network will be accepted.
-    "arenaCompare": 50,
+    "arenaCompare": 60,
     # Number of games moves for MCTS to simulate.
     "numMCTSSims": 800,
     # temp=1 (Temperature, τ (tau)) if episodeStep < tempThresholdStep, and thereafter uses temp=0.
