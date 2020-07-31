@@ -19,7 +19,7 @@ from utils import *
 from parl.utils import logger
 
 load_folder_file = (
-    "../../../../connect_x/runs/taiga_07_23",
+    "../../../../connect_x/runs/taiga_07_25",
     "best.pth.tar",
 )
 
@@ -27,7 +27,7 @@ args = dotdict({
     # master address of xparl cluster
     "master_address": "localhost:8010",
     # number of remote actors (execute tasks [self-play/pitting/evaluate_test_dataset] in parallel).
-    "actors_num": 5,
+    "actors_num": 10,
 
     # total number of iteration
     "numIters": 10,
