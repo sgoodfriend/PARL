@@ -27,10 +27,10 @@ args = dotdict({
     # master address of xparl cluster
     "master_address": "localhost:8010",
     # number of remote actors (execute tasks [self-play/pitting/evaluate_test_dataset] in parallel).
-    "actors_num": 20,
+    "actors_num": 10,
 
     # total number of iteration
-    "numIters": 10,
+    "numIters": 20,
     # Number of complete self-play games to simulate during a new iteration.
     "numEps": 750,
     # Number of games to play during arena (pitting) play to determine if new neural network will be accepted.
