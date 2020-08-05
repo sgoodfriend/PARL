@@ -19,7 +19,7 @@ from utils import *
 from parl.utils import logger
 
 load_folder_file = (
-    "../../../../connect_x/runs/taiga_07_31",
+    "../../../../connect_x/runs/taiga_08_04",
     "best.pth.tar",
 )
 
@@ -46,7 +46,7 @@ args = dotdict({
     # alpha parameter of dirichlet noise which is added to the policy (pi)
     "dirichletAlpha": 0.48,
     # history of examples from numItersForTrainExamplesHistory latest iterations (training data)
-    "numItersForTrainExamplesHistory": 20,
+    "numItersForTrainExamplesHistory": 40,
 
     # folder to save model and training examples
     "checkpoint": "./saved_model/",
