@@ -19,7 +19,7 @@ from utils import *
 from parl.utils import logger
 
 load_folder_file = (
-    "../../../../connect_x/runs/taiga_08_04",
+    "../../../../connect_x/runs/taiga_08_06",
     "best.pth.tar",
 )
 
@@ -30,9 +30,9 @@ args = dotdict({
     "actors_num": 10,
 
     # total number of iteration
-    "numIters": 20,
+    "numIters": 50,
     # Number of complete self-play games to simulate during a new iteration.
-    "numEps": 750,
+    "numEps": 500,
     # Number of games to play during arena (pitting) play to determine if new neural network will be accepted.
     "arenaCompare": 60,
     # Number of games moves for MCTS to simulate.
@@ -46,7 +46,7 @@ args = dotdict({
     # alpha parameter of dirichlet noise which is added to the policy (pi)
     "dirichletAlpha": 0.48,
     # history of examples from numItersForTrainExamplesHistory latest iterations (training data)
-    "numItersForTrainExamplesHistory": 40,
+    "numItersForTrainExamplesHistory": 100,
 
     # folder to save model and training examples
     "checkpoint": "./saved_model/",
